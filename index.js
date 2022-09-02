@@ -4,14 +4,14 @@ const entradas = [
     nombre: "Afrojack",
     precio: 200,
     stock: 250,
-    img:'/https://ibb.co/rZGJkHp-prox.webpp',
+    img:'https://ibb.co/rZGJkHp',
   },
   {
     id: 2,
     nombre: "Claptone",
     precio: 400,
     stock: 200,
-    img: "hhttps://ibb.co/CmCvSbC",
+    img: "https://ibb.co/CmCvSbC",
   },
   {
     id: 3,
@@ -22,8 +22,8 @@ const entradas = [
   },
 ]
 function imprimirDetalle(id, insertBox){
-    let producto = productos[id-1]
-    const {nombre, precio, stock, img} = producto
+    let entrada = entradas[id-1]
+    const {nombre, precio, stock, img} = entrada
 
     insertBox.innerHTML = `<div>
                                 <div class="closePopup">Salir</div>
@@ -94,15 +94,15 @@ function imprimirDetalle(id, insertBox){
     }
 }
 
-const mainBox = document.querySelector('.div')
+const mainBox = document.querySelector('.main')
 
 //For para insertar productos al main segun mi array de objetos
-for(producto of productos){
+for(entrada of entradas){
     //Uso desestructuracion para no repetir producto.propiedad
-    const {id, nombre, precio, stock, img} = producto
+    const {id, nombre, precio, stock, img} = entrada
 
     //console.log(id)
-    mainBox.innerHTML +=  `<article class="product">
+    mainBox.innerHTML +=  `<article class="entradas">
                                 <div class="imagen">
                                     <img src="${img}" alt="${nombre}">
                                 </div>
